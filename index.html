@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 25th Birthday Sister! 🎉</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+</head>
+<body>
+    <div class="balloons-container"></div>
+    
+    <div class="main-container">
+        <div class="header-container">
+            <div class="background-numbers">
+                <!-- Limit the number of 25s to a reasonable amount -->
+                <script>
+                    for(let i = 0; i < 5; i++) {
+                        document.write(`<span class="number-25" style="--rotation: ${Math.random() * 360}deg">25</span>`);
+                    }
+                </script>
+            </div>
+            <h1 class="header-title animate__animated animate__bounceIn">
+                Happy 25th Birthday Sister! <span class="header-cake">🎂</span>
+            </h1>
+        </div>
+
+        <section id="photo-gallery" class="section">
+            <div class="gallery-grid">
+                <!-- Gallery items will be added dynamically -->
+            </div>
+            <div class="gallery-modal">
+                <span class="close-modal">&times;</span>
+                <img id="modal-image" src="" alt="Gallery Image">
+                <div class="modal-caption"></div>
+            </div>
+        </section>
+
+        <div class="tab-container">
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="wishes">Wishes</button>
+                <button class="tab-btn" data-tab="music">Music</button>
+                <button class="tab-btn" data-tab="countdown">Countdown</button>
+            </div>
+
+            <div class="tab-content active" id="wishes-tab">
+                <div class="wishes-container"></div>
+                <div class="wish-form">
+                    <input type="text" id="wish-name" placeholder="Your Name">
+                    <textarea id="wish-message" placeholder="Write your wish..."></textarea>
+                    <button onclick="addWish()">Send Wish</button>
+                </div>
+            </div>
+
+            <div class="tab-content" id="music-tab">
+                <div id="music-player" class="music-player">
+                    <button id="play-pause" class="music-toggle" title="Toggle Music">
+                        <span class="play-icon">🎵</span>
+                        <span class="pause-icon hidden">⏸️</span>
+                    </button>
+                    <div class="music-info">Now Playing: Birthday Song</div>
+                    <audio id="birthday-song" src="assets/music/birthday-song.mp3" loop></audio>
+                </div>
+            </div>
+
+            <div class="tab-content" id="countdown-tab">
+                <div class="countdown-timer">
+                    <div class="time-unit">
+                        <span id="days">00</span>
+                        <label>Days</label>
+                    </div>
+                    <div class="time-unit">
+                        <span id="hours">00</span>
+                        <label>Hours</label>
+                    </div>
+                    <div class="time-unit">
+                        <span id="minutes">00</span>
+                        <label>Minutes</label>
+                    </div>
+                    <div class="time-unit">
+                        <span id="seconds">00</span>
+                        <label>Seconds</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
